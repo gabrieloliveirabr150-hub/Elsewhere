@@ -1,0 +1,210 @@
+
+/* ===== CONFIGURAÇÕES GERAIS ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #101923;
+    color: #F4F1EA;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ===== CABEÇALHO ===== */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 7%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.navigation {
+    display: flex;
+    gap: 32px;
+}
+
+.navigation a {
+    color: #C4CBD4;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+    color: #E67E58;
+}
+
+.header-button {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.header-button:hover {
+    background-color: #E67E58;
+    border-color: #E67E58;
+}
+
+/* ===== APRESENTAÇÃO PRINCIPAL ===== */
+
+.hero {
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    padding: 90px 10%;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(16, 25, 35, 0.95) 0%,
+            rgba(16, 25, 35, 0.65) 50%,
+            rgba(16, 25, 35, 0.15) 100%
+        ),
+        url("images/iceland.jpg") center 55% / cover no-repeat;
+}
+
+.hero-content {
+    max-width: 650px;
+    animation: appear 1s ease both;
+}
+
+.hero-label,
+.section-label {
+    color: #E67E58;
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 1.05;
+    letter-spacing: -4px;
+    margin: 24px 0;
+}
+
+.hero-description {
+    color: #D0D5DA;
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 380px;
+    margin-bottom: 32px;
+}
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    background-color: #E67E58;
+    color: #101923;
+    padding: 16px 24px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.hero-button:hover {
+    transform: translateY(-3px);
+}
+
+/* ===== DESTINOS ===== */
+
+.destinations {
+    padding: 90px 7%;
+}
+
+.destinations h2 {
+    font-size: clamp(30px, 4vw, 46px);
+    letter-spacing: -1.5px;
+    margin-top: 18px;
+    margin-bottom: 40px;
+}
+
+/* ===== RODAPÉ ===== */
+
+footer {
+    padding: 30px 7%;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    color: #C4CBD4;
+    font-size: 13px;
+}
+
+/* ===== ANIMAÇÃO DE ENTRADA ===== */
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+@media (max-width: 600px) {
+    .header {
+        padding: 20px 5%;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .navigation {
+        gap: 14px;
+    }
+
+    .navigation a {
+        font-size: 12px;
+    }
+
+    .header-button {
+        display: none;
+    }
+
+    .hero {
+        min-height: 560px;
+        padding: 70px 7%;
+        background-position: 60% center;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .destinations {
+        padding: 65px 7%;
+    }
+}
